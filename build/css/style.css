@@ -429,6 +429,8 @@ button[type=submit]:hover {
   display: block;
   margin-top: auto;
   margin-bottom: auto;
+  position: relative;
+  z-index: -1;
 }
 
 .grid__title {
@@ -496,6 +498,8 @@ button[type=submit]:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: -1;
 }
 
 .grid__form input {
@@ -573,6 +577,98 @@ button[type=submit]:hover {
 
 .box__item-price span {
   color: #303241;
+}
+
+.dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.dropdown__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  padding: 5px;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown__btn img {
+  border-radius: 10px;
+}
+
+.dropdown__btn p {
+  display: none !important;
+}
+
+.dropdown__body {
+  overflow: auto;
+  display: none;
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  z-index: 55;
+  top: 50px;
+  left: -260px;
+  border-radius: 12px;
+  border: 1px solid #89898D;
+  background: rgba(21, 24, 35, 0.9);
+  -webkit-box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(22px);
+          backdrop-filter: blur(22px);
+  padding: 5px 0;
+}
+
+.dropdown__body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+  border-radius: 999px;
+}
+
+.dropdown__body::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+  border-radius: 999px;
+}
+
+.dropdown__body::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: gray;
+  border-radius: 999px;
+}
+
+.dropdown .dynamic-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  color: #fff;
+  padding: 10px;
+  background: none;
+  max-width: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdown .dynamic-button:hover {
+  background: #89898D;
+}
+
+.dropdown .dynamic-button img {
+  border-radius: 10px;
 }
 
 @media (max-width: 1449.98px) {
@@ -757,7 +853,7 @@ button[type=submit]:hover {
 @media (max-width: 767.98px) {
   .hero__wrapper {
     grid-template-columns: 1fr;
-    grid-template-areas: "hero__num-2" "hero__num-4" "hero__num-1";
+    grid-template-areas: "hero__num-4" "hero__num-2" "hero__num-1";
   }
 
   .hero__null {
@@ -776,6 +872,12 @@ button[type=submit]:hover {
     -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
             transform: rotate(90deg);
+  }
+
+  .dropdown__body {
+    width: 250px;
+    height: 200px;
+    left: -200px;
   }
 }
 
