@@ -610,7 +610,6 @@ button[type=submit]:hover {
 }
 
 .dropdown__body {
-  overflow: auto;
   display: none;
   width: 300px;
   height: 250px;
@@ -626,24 +625,6 @@ button[type=submit]:hover {
   -webkit-backdrop-filter: blur(22px);
           backdrop-filter: blur(22px);
   padding: 5px 0;
-}
-
-.dropdown__body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #F5F5F5;
-  border-radius: 999px;
-}
-
-.dropdown__body::-webkit-scrollbar {
-  width: 6px;
-  background-color: #F5F5F5;
-  border-radius: 999px;
-}
-
-.dropdown__body::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: gray;
-  border-radius: 999px;
 }
 
 .dropdown .dynamic-button {
@@ -669,6 +650,81 @@ button[type=submit]:hover {
 
 .dropdown .dynamic-button img {
   border-radius: 10px;
+}
+
+.tabs {
+  width: 100%;
+}
+
+.tabs__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 15px 0;
+}
+
+.tabs__header-item {
+  margin: 0 25px;
+  cursor: pointer;
+}
+
+.tabs__header-item.active {
+  color: #d55ad8;
+}
+
+.tabs__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: auto;
+  position: relative;
+}
+
+.tabs__content-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: auto;
+  height: 190px;
+}
+
+.tabs__content-item::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+  border-radius: 999px;
+}
+
+.tabs__content-item::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+  border-radius: 999px;
+}
+
+.tabs__content-item::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: gray;
+  border-radius: 999px;
+}
+
+.tabs__content::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #89898D;
+  top: 0;
+  left: 0;
 }
 
 @media (max-width: 1449.98px) {
@@ -878,6 +934,14 @@ button[type=submit]:hover {
     width: 250px;
     height: 200px;
     left: -200px;
+  }
+
+  .tabs__header-item {
+    margin: 0 15px;
+  }
+
+  .tabs__content-item {
+    height: 140px;
   }
 }
 
